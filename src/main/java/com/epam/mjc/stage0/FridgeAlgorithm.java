@@ -12,5 +12,30 @@ public class FridgeAlgorithm {
      */
     public void fridgeAlgorithm(Fridge fridge) {
 
+        fridge.open();
+        fridge.getMilk();
+        fridge.close();
+
+    }
+    public static void main(String[] args){
+        FridgeAlgorithm fridgeAlgorithm = new FridgeAlgorithm();
+        var fridge = new Fridge() {
+            @Override
+            public void open() {
+
+            }
+
+            @Override
+            public void getMilk() {
+
+            }
+
+            @Override
+            public void close() {
+
+            }
+        };
+        fridgeAlgorithm.fridgeAlgorithm(fridge);
+
     }
 }
