@@ -27,13 +27,12 @@ public class ArrayTasks {
      */
     public int[] generateNumbers(int length) {
         int[] array = new int[length];
-        for (int i=0; i<array.length; i++){
-            int element = 1;
-            array[i] = element;
-            element ++;
+        for (int i=0; i<length; i++){
+            array[i]=i+1;
         }
         return array;
     }
+
 
     /**
      * Find the sum of all elements of the int[] array.
@@ -67,12 +66,10 @@ public class ArrayTasks {
             if (arr[i] == number){
                 return i;
             }
-            else {
-                return -1;
-            }
         }
-        return number;
+        return -1;
     }
+
 
     /**
      * Return the new String[] array obtained from the arr array
@@ -84,12 +81,13 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-        int leng = arr.length;
-        for(int i = 0; i<leng; i++){
-            arr[i] = arr[leng];
-            leng--;
+        int end = arr.length;
+        String[] newArray = new String[end];
+        for(int i=0; i<end; i++){
+            newArray[i] = arr[end-1-i];
         }
-        return arr;
+        return newArray;
+
     }
 
     /**
@@ -104,10 +102,18 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-    int[] positive = new int[]{};
-    for (int i = 0; i < arr.length; i++){
-        if(arr[i]>0){
-            System.arraycopy(arr, i, positive, 0, arr.length);
+        int count = 0;
+        for (int num : arr){
+            if(num>0){
+                count ++;
+            }
+        }
+    int[] positive = new int[count];
+        int index = 0;
+    for (int num : arr){
+        if (num > 0){
+            positive[index] = num;
+            index++;
         }
 
     }
